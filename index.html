@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2KBite - Just Vibes.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Y2KBite</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre" class="nav-link active" data-page="sobre">Sobre Nós</a></li>
+                <li><a href="#cardapio" class="nav-link" data-page="cardapio">Cardápio</a></li>
+                <li><a href="#entregas" class="nav-link" data-page="entregas">Entregas</a></li>
+                <li><a href="#contatos" class="nav-link" data-page="contatos">Contatos</a></li>
+            </ul>
+            <div class="nav-user">
+                <button class="user-btn" id="userBtn" aria-label="Perfil do usuário">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- USER MODAL -->
+    <div class="modal-overlay" id="userModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>Entrar / Cadastrar</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Seu e-mail" required>
+                <input type="password" placeholder="Sua senha" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+            <p class="modal-footer">Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA: HOME / SOBRE ==================== -->
+    <section class="page active" id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Y2KBite</h1>
+                <p class="hero-subtitle">Just Vibes.</p>
+                <div class="hero-divider"></div>
+            </div>
+        </div>
+
+        <div class="section-content" id="sobre">
+            <h2 class="section-title">Quem Somos?</h2>
+            <div class="about-text">
+                <p>O Y2KBite é um restaurante inspirado na nostalgia dos anos 2000, criado para oferecer uma experiência gastronômica única, com sabores marcantes, ambiente aconchegante e uma decoração que resgata o estilo vibrante dessa época.</p>
+                <p>Nosso cardápio mistura o melhor da culinária contemporânea com aquela vibe retrô que todo mundo ama. Venha viver essa experiência!</p>
+            </div>
+            <div class="about-features">
+                <div class="feature-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Sabores Únicos</h3>
+                    <p>Receitas exclusivas com toque Y2K</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Ambiente Retrô</h3>
+                    <p>Decoração dos anos 2000</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Delivery Rápido</h3>
+                    <p>Entrega em 30 a 50 minutos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PÁGINA: CARDÁPIO ==================== -->
+    <section class="page" id="cardapio">
+        <div class="page-header">
+            <h1 class="page-title">Cardápio</h1>
+            <div class="title-divider"></div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-item" data-category="burger">
+                <div class="menu-img">
+                    <div class="food-placeholder burger-visual">
+                        <span>🍔</span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Hambúrguer Bacon Cheddar</h3>
+                    <p class="menu-desc">Pão brioche, blend 180g, bacon crocante, cheddar derretido e molho especial</p>
+                    <span class="menu-price">R$ 24,99</span>
+                    <button class="btn-add" onclick="addToCart('Hambúrguer Bacon Cheddar', 24.99)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-item" data-category="side">
+                <div class="menu-img">
+                    <div class="food-placeholder fries-visual">
+                        <span>🍟</span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Batata Frita Média</h3>
+                    <p class="menu-desc">Batatas crocantes por fora, macias por dentro, com sal e tempero especial</p>
+                    <span class="menu-price">R$ 15,00</span>
+                    <button class="btn-add" onclick="addToCart('Batata Frita Média', 15.00)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-item" data-category="drink">
+                <div class="menu-img">
+                    <div class="food-placeholder drink-visual">
+                        <span>🥤</span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Coca-Cola 1L</h3>
+                    <p class="menu-desc">Refrigerante gelado, perfeito para acompanhar seu pedido</p>
+                    <span class="menu-price">R$ 9,99</span>
+                    <button class="btn-add" onclick="addToCart('Coca-Cola 1L', 9.99)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-item featured" data-category="combo">
+                <div class="badge">Mais Pedido</div>
+                <div class="menu-img">
+                    <div class="food-placeholder combo-visual">
+                        <span>🍔🍟</span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Combo Y2K</h3>
+                    <p class="menu-desc">Hambúrguer Bacon Cheddar + Batata Frita Média + Coca-Cola 1L</p>
+                    <span class="menu-price">R$ 34,99</span>
+                    <button class="btn-add" onclick="addToCart('Combo Y2K', 34.99)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="menu-item" data-category="dessert">
+                <div class="menu-img">
+                    <div class="food-placeholder dessert-visual">
+                        <span>🍮</span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Pudim</h3>
+                    <p class="menu-desc">Pudim de leite condensado cremoso com calda de caramelo</p>
+                    <span class="menu-price">R$ 14,99</span>
+                    <button class="btn-add" onclick="addToCart('Pudim', 14.99)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="menu-item" data-category="pizza">
+                <div class="menu-img">
+                    <div class="food-placeholder pizza-visual">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <h3>Pizza de Pepperoni</h3>
+                    <p class="menu-desc">Massa artesanal, molho de tomate, mussarela e pepperoni</p>
+                    <span class="menu-price">R$ 29,99</span>
+                    <button class="btn-add" onclick="addToCart('Pizza de Pepperoni', 29.99)">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="burger">Hambúrgueres</button>
+            <button class="filter-btn" data-filter="side">Acompanhamentos</button>
+            <button class="filter-btn" data-filter="drink">Bebidas</button>
+            <button class="filter-btn" data-filter="combo">Combos</button>
+            <button class="filter-btn" data-filter="dessert">Sobremesas</button>
+            <button class="filter-btn" data-filter="pizza">Pizzas</button>
+        </div>
+    </section>
+
+    <!-- ==================== PÁGINA: ENTREGAS ==================== -->
+    <section class="page" id="entregas">
+        <div class="page-header">
+            <h1 class="page-title">Entregas</h1>
+            <div class="title-divider"></div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar por CEP..." id="cepInput">
+                <button class="btn-search" id="btnCep">Verificar</button>
+            </div>
+        </div>
+
+        <div class="delivery-content">
+            <div class="delivery-text">
+                <p>Preparado para receber o melhor da Y2KBite? direto no conforto da sua casa? Nosso serviço de delivery foi pensado para garantir praticidade, agilidade e aquela nostalgia deliciosa sem você precisar sair do sofá.</p>
+                <p>Entregamos em toda a região e bairros próximos. Basta inserir seu CEP na hora do pedido para conferir a disponibilidade.</p>
+                <p>Seus hambúrgueres e combos chegam quentinhos em um prazo médio de <strong>30 a 50 minutos</strong>.</p>
+            </div>
+
+            <div class="cep-result" id="cepResult" style="display:none;">
+                <div class="cep-status" id="cepStatus"></div>
+            </div>
+
+            <div class="payment-methods">
+                <h3>Formas de Pagamento</h3>
+                <div class="payment-grid">
+                    <div class="payment-card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Cartão de Crédito</span>
+                        <small>Na entrega ou pelo site/app</small>
+                    </div>
+                    <div class="payment-card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Cartão de Débito</span>
+                        <small>Na entrega ou pelo site/app</small>
+                    </div>
+                    <div class="payment-card">
+                        <i class="fab fa-pix"></i>
+                        <span>PIX</span>
+                        <small>Rápido e sem taxa</small>
+                    </div>
+                    <div class="payment-card">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Vale-Refeição</span>
+                        <small>VR / VA / Sodexo / Alelo</small>
+                    </div>
+                    <div class="payment-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Dinheiro</span>
+                        <small>Informe se precisa de troco</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-cta">
+                <a href="#cardapio" class="btn-primary btn-large">
+                    <i class="fas fa-utensils"></i> Ver Cardápio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PÁGINA: CONTATOS ==================== -->
+    <section class="page" id="contatos">
+        <div class="page-header">
+            <h1 class="page-title">Contatos</h1>
+            <div class="title-divider"></div>
+        </div>
+
+        <div class="contact-intro">
+            <p>Quer pedir algo ou falar com a gente? Entre em contato conosco! Oferecemos nosso apoio em caso de imprevistos.</p>
+        </div>
+
+        <h2 class="section-title small">Nossos meios de contato:</h2>
+
+        <div class="contact-grid">
+            <a href="https://instagram.com/Y2K_Bites" target="_blank" class="contact-card">
+                <div class="contact-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p>@Y2K_Bites</p>
+            </a>
+
+            <a href="https://wa.me/5511999992222" target="_blank" class="contact-card">
+                <div class="contact-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>55+ 11 99999-2222</p>
+            </a>
+
+            <a href="mailto:Y2K.Bites@gmail.com" class="contact-card">
+                <div class="contact-icon email">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>E-mail</h3>
+                <p>Y2K.Bites@gmail.com</p>
+            </a>
+
+            <a href="tel:+5511999992222" class="contact-card">
+                <div class="contact-icon phone">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Telefone</h3>
+                <p>55+ 11 99999-2222</p>
+            </a>
+        </div>
+
+        <!-- Formulário de contato -->
+        <div class="contact-form-section">
+            <h2 class="section-title small">Envie uma mensagem</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu e-mail" required>
+                </div>
+                <input type="text" placeholder="Assunto" required>
+                <textarea placeholder="Sua mensagem..." rows="5" required></textarea>
+                <button type="submit" class="btn-primary btn-large">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CARRINHO FLUTUANTE -->
+    <div class="cart-float" id="cartFloat">
+        <button class="cart-btn" id="cartBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
+
+    <!-- MODAL DO CARRINHO -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal cart-modal">
+            <button class="modal-close" id="cartModalClose">&times;</button>
+            <h2><i class="fas fa-shopping-cart"></i> Seu Pedido</h2>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Seu carrinho está vazio</p>
+            </div>
+            <div class="cart-total" id="cartTotal" style="display:none;">
+                <span>Total:</span>
+                <strong id="totalValue">R$ 0,00</strong>
+            </div>
+            <button class="btn-primary btn-large btn-checkout" id="btnCheckout" style="display:none;">
+                <i class="fab fa-whatsapp"></i> Finalizar pelo WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Y2KBite</h3>
+                <p>Just Vibes. 🌟</p>
+            </div>
+            <div class="footer-links">
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#cardapio">Cardápio</a>
+                <a href="#entregas">Entregas</a>
+                <a href="#contatos">Contatos</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://instagram.com/Y2K_Bites" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5511999992222" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:Y2K.Bites@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Y2KBite. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
